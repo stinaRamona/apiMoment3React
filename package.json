@@ -1,0 +1,19 @@
+{
+  "name": "apimoment3react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.12",
+    "dotnet": "^1.1.4",
+    "joi": "^17.13.3",
+    "mongoose": "^8.10.0",
+    "nodemon": "^3.1.9"
+  }
+}
