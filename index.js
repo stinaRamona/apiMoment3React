@@ -24,6 +24,11 @@ const init = async () => {
         console.log("Fel vid anslutning:" + error); 
     });
 
+    //router 
+    //kanske behöver kombinera rutterna sen. (behöver göra för auth också)
+    const routes = require("./routes/blogpost.route"); 
+    server.route(routes);
+
     await server.start();
     console.log('Server running on %s', server.info.uri);
 };
