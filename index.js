@@ -2,6 +2,7 @@
 
 const Hapi = require('@hapi/hapi');
 const Mongoose = require("mongoose"); 
+const loginAuthStrategy = require('./loginauth');
 require("dotenv").config(); 
 
 const init = async () => {
@@ -17,6 +18,9 @@ const init = async () => {
         }
     });
 
+    //går genom validering från loginauth.js
+    await loginAuthStrategy(server); 
+
     //koppla till databasen 
     Mongoose.connect(process.env.DATABASE).then(() => {
         console.log("Ansluten till MongoDB"); 
@@ -25,8 +29,8 @@ const init = async () => {
     });
 
     //router 
-    //kanske behöver kombinera rutterna sen. (behöver göra för auth också)
-    const routes = require("./routes/blogpost.route"); 
+    //rutter kombinderade i combined.route.js
+    const routes = require("./routes/combined.route"); 
     server.route(routes);
 
     await server.start();
