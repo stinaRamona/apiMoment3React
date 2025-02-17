@@ -10,6 +10,7 @@ const authRouteArr = [
         method: "POST", 
         path: "/adduser",
         options: {
+            auth: false,
             validate: {
                 payload: Joi.object({
                     user_name: Joi.string().min(3).required(), 
@@ -21,7 +22,7 @@ const authRouteArr = [
         handler: async (request, h) => {
             const { user_name, email, password} = request.payload; 
 
-            const hashedPassword = await Bcrypt.hash(password, 10);
+            const hashedPassword = await bcrypt.hash(password, 10);
 
             const user = new Admin({
                 user_name, 
