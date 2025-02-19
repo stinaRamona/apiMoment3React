@@ -5,7 +5,10 @@ const blogpostRouteArr = [
     //Hämta hela listan med bloginlägg
     {
         method: "GET", 
-        path: "/posts", 
+        path: "/posts",
+        options : {
+            auth: false
+        },
         handler: async (request, h) => {
             return await BlogPost.find(); 
         }
@@ -15,7 +18,10 @@ const blogpostRouteArr = [
     //Hämta ett specifikt blogginlägg
     {
         method: "GET",
-        path: "/post/{id}", 
+        path: "/post/{id}",
+        options: {
+            auth: false
+        }, 
         handler: async (request, h) => {
             try {
                 const post = await BlogPost.findById(request.params.id); 
@@ -31,6 +37,7 @@ const blogpostRouteArr = [
         method: "POST",
         path: "/post", 
         options: {
+            auth: false,
             validate: {
                 payload: Joi.object({
                     title: Joi.string().min(3).required(), 
@@ -50,6 +57,7 @@ const blogpostRouteArr = [
         method: "PUT",
         path: "/post/{id}", 
         options: {
+            auth: false,
             validate: {
                 payload: Joi.object({
                     title: Joi.string().min(3).required(), 
@@ -76,6 +84,9 @@ const blogpostRouteArr = [
     {
         method: "DELETE",
         path: "/post/{id}", 
+        options: {
+            auth: false,
+        },
         handler: async (request, h) => {
             try {
                 return await BlogPost.findByIdAndDelete(request.params.id);
