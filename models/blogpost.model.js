@@ -16,7 +16,7 @@ const blogpostSchema = new Mongoose.Schema(
             required: true,
         }, 
         created: {
-            type: Date, 
+            type: Date("<YYYY-mm-dd>"), 
             default: Date.now,
         }
     }); 
