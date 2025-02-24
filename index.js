@@ -13,7 +13,7 @@ const init = async () => {
         routes: {
             cors: {
                 origin: ['*'], //Cors ok
-                credentials: true // cookie ok
+                //credentials: true // cookie ok
             }
         }
     });
