@@ -12,7 +12,7 @@ const init = async () => {
         host: '0.0.0.0', 
         routes: {
             cors: {
-                origin: ['*'], //Cors ok
+                origin: ['http://localhost:5173'], //Cors ok
                 additionalHeaders: ['Authorization', 'Content-Type'], //headers ok
                 credentials: true // cookie ok
             }
