@@ -13,6 +13,7 @@ const init = async () => {
         routes: {
             cors: {
                 origin: ['*'], //Cors ok
+                additionalHeaders: ['Authorization', 'Content-Type'], //headers ok
                 credentials: true // cookie ok
             }
         }
