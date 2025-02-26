@@ -70,7 +70,7 @@ const authRouteArr = [
                     {expiresIn: "8h"}
                 )
 
-                return h.response({ token }).code(200); 
+                return h.response({ token, user: admin }).code(200); 
 
             } catch(error) {
                 console.log(error);  
