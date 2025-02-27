@@ -3,12 +3,12 @@ const Admin = require("./models/admin.model");
 
 const validate = async (decoded, request, h) => {
     try {
-        const admin = Admin.findById(decoded.id); 
-        if (!admin) {
+        const user = Admin.findById(decoded.id); 
+        if (!user) {
             return { isValid: false }
         }
 
-        return { isValid: true }; 
+        return { isValid: true, credentials: user }; 
 
     } catch(error) {
         console.log(error); 
