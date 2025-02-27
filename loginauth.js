@@ -3,7 +3,7 @@ const Admin = require("./models/admin.model");
 
 const validate = async (decoded, request, h) => {
     try {
-        const user = Admin.findById(decoded.id); 
+        const user = await Admin.findById(decoded.id); 
         if (!user) {
             return { isValid: false }
         }
