@@ -8,6 +8,7 @@ const validate = async (decoded, request, h) => {
             return { isValid: false }
         }
 
+        console.log("Användare: " + user);
         return { isValid: true, credentials: user }; 
 
     } catch(error) {
