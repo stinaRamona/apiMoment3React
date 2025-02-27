@@ -87,7 +87,8 @@ const authRouteArr = [
             auth: "jwt"
         }, 
         handler: async (request, h) => {
-            return { message: "Hurra! Du har tillgång till den skyddade rutten!" }
+            const { user } = request.auth.credentials;  
+            return { message: "Hurra! Du har tillgång till den skyddade rutten!", user: user }; 
         }
     }, 
 
