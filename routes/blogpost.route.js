@@ -42,7 +42,7 @@ const blogpostRouteArr = [
                 payload: Joi.object({
                     title: Joi.string().min(3).required(), 
                     author: Joi.string().min(3).required(), 
-                    postText: Joi.string().min(10).required()
+                    postText: Joi.string().min(3).required()
                 })
             }
         },
@@ -62,7 +62,7 @@ const blogpostRouteArr = [
                 payload: Joi.object({
                     title: Joi.string().min(3).required(), 
                     author: Joi.string().min(3).required(),
-                    postText: Joi.string().min(10).required()
+                    postText: Joi.string().min(3).required()
                 })
             }
         },
